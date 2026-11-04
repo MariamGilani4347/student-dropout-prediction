@@ -2,7 +2,7 @@
 
 A machine learning project that predicts whether a student is at risk of dropping out, and shows the result as a dropout probability and a risk level (Low / Medium / High). It can be used as an educational early-warning system.
 
-**Live App:** PASTE_YOUR_HUGGING_FACE_LINK_HERE
+**Live App:** https://dropout-risk-predictor.streamlit.app/
 
 ## 1. Problem Statement
 Some students leave their studies before completing them. This project identifies students who may be at risk so that universities can support them early.
@@ -42,10 +42,10 @@ Some students leave their studies before completing them. This project identifie
 - ROC-AUC: 0.8186
 - Confusion matrix: TN = 1439, FP = 90, FN = 281, TP = 190
 
-False negatives (dropout students the model missed) are the most costly errors, because those students would not receive support.
+False negatives (dropout students the model missed) are the most costly errors, because those students would not receive support. The model catches about 40% of the students who actually drop out, so it works best as a screening aid, not as a final decision maker.
 
 ## 7. Prediction App
-The Gradio app takes student information as input and returns the dropout probability and a risk level:
+The Streamlit app takes student information as input and returns the dropout probability and a risk level:
 - Low Risk: below 30%
 - Medium Risk: 30% to 60%
 - High Risk: above 60%
@@ -53,7 +53,7 @@ The Gradio app takes student information as input and returns the dropout probab
 ## 8. How to Run Locally
 1. Clone this repository
 2. Install requirements: pip install -r requirements.txt
-3. Run: python app.py
+3. Run: streamlit run streamlit_app.py
 4. Open the local link shown in the terminal
 
 ## 9. Real-World Use
@@ -61,11 +61,12 @@ Universities can use this system as an early-warning tool. Advisors can enter a 
 
 ## 10. Limitations
 - The model gives a risk estimate, not a final decision about any student
+- Recall for the dropout class is low (0.4034), so many at-risk students are still missed
 - Results depend on the quality of the dataset
 - Future work: try other models (Random Forest, XGBoost), handle class imbalance, add more features
 
 ## Files
-- app.py - Gradio web application
+- streamlit_app.py - Streamlit web application
 - dropout_model.pkl - trained Logistic Regression model
 - columns.json - feature columns used during training
 - requirements.txt - Python dependencies
