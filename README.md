@@ -25,7 +25,7 @@ Some students leave their studies before completing them. This project identifie
 
 ## 4. Exploratory Data Analysis
 - Dropout students had a much lower average GPA (1.43 vs 2.58)
-- Higher stress was linked with dropout (6.32 vs 5.26)
+- Higher stress was linked with dropout (6.28 vs 5.27)
 - Attendance was slightly lower for dropouts (79.3% vs 82.5%)
 - GPA, Semester GPA and CGPA had the strongest negative correlation with dropout (about -0.45)
 
